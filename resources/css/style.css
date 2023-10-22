@@ -4,6 +4,7 @@
     margin:0;
     padding: 0;
     box-sizing: border-box;
+    transition: 3s ease all;
 }
 
 body {
@@ -16,7 +17,6 @@ body {
     max-width: 100%;
     display: grid;
     place-items: center;
-    transition: 3s ease all;
 }
 
 body.dark {
@@ -25,7 +25,6 @@ body.dark {
 }
 
 .calculadora {
-    
     background-color: rgba(240, 160, 48, 0.8);
     color: white;
     display:grid;
