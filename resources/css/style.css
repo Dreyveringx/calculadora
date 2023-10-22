@@ -7,6 +7,7 @@
 }
 
 body {
+    background-color: rgb(255, 255, 255);
     background-image: url('../css/img/day.jpg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -15,28 +16,35 @@ body {
     max-width: 100%;
     display: grid;
     place-items: center;
+    transition: 3s ease all;
 }
 
-
-/*background-color: rgba(141, 48, 240, 0.89);background-color: rgba(240, 160, 48, 0.89);*/
+body.dark {
+    background-color: rgb(46, 30, 63);
+    background-image: url('../css/img/noche.jpg');
+}
 
 .calculadora {
     
-    background-color: rgba(240, 160, 48, 0.89);
+    background-color: rgba(240, 160, 48, 0.8);
     color: white;
     display:grid;
     grid-template-columns: repeat(4, 1fr);
-    margin-top: 10%;
+    margin-top: 8%;
     width: 70%;
     max-width: 100%;
-    height: 50vh;
+    height: 60vh;
     padding: 1.5%;
     border-radius: 1rem;
 }
 
+body.dark .calculadora {
+    background-color: rgba(82, 29, 138, 0.8);
+}
+
 #display {
     grid-column: 1/-1;
-    background-color: rgba(0, 0, 0, 0.85);
+    background-color: rgba(0, 0, 0, 0.8);
     color:white;
     padding: 2%;
     font-size: 180%;
@@ -45,8 +53,9 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
-button {
-    background-color: rgba(243, 219, 10,0.5);
+.btn {
+    background-color: rgba(243, 219, 10,0.7);
+    font-size: 30px;
     color:white;
     border: 0;
     border-radius: 10%;
@@ -58,9 +67,35 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+body.dark .btn {
+    background-color: rgba(161, 147, 16, 0.8);
+}
+
+.btn:hover {
     background-color: rgba(255, 255, 255, 0.588);
     color:black;
+}
+
+body.dark .btn:hover {
+
+    background-color: rgba(255, 255, 255, 0.588);
+    color:black;
+}
+
+#c, #del, #igual, #cero {
+    background-color: rgba(243, 219, 10);
+}
+
+#c:hover, #del:hover, #igual:hover, #cero:hover {
+    background-color: rgba(255, 255, 255, 0.588);
+}
+
+body.dark #c, body.dark #del, body.dark #cero, body.dark #igual {
+    background-color: rgb(181, 164, 18);
+}
+
+body.dark #c:hover, body.dark #del:hover, body.dark #cero:hover, body.dark #igual:hover {
+    background-color: rgba(255, 255, 255, 0.588);
 }
 
 #cero {
@@ -71,15 +106,54 @@ button:hover {
     grid-row: span 2;
 }
 
-#modoBoton {
-    margin:10%;
+
+.switch {
+    background-color: rgb(0, 72, 139);
+    border-radius: 1000px;
+    border:none;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    outline: none; 
+}
+
+.switch::after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    background-color: rgb(121, 99, 144);
+    top: 0;
+    left: 0;
+    right: unset;
+    border-radius: 100px;
+    transform: 3s ease all;
+    box-shadow: 0px 0px 2px 2px black;
+}
+.switch.active {
+    background-color: rgba(243, 219, 10);
+    color: black;
 }
 
 
-@media screen and (max-width: 768px) {
-    body {
-        max-width: 100%;
-        max-height: 100%;
-        /* Puedes usar "contain" en pantallas pequeñas si es necesario */
+.switch.active::after {
+    background-color: rgb(159, 154, 115);
+    right: 0;
+    left:unset
+}
+
+span {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    display: block;
+    background: none;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .calculadora {
+        width: 90%;
     }
 }
