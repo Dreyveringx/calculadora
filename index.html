@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mi calculadora</title>
+    <link rel="stylesheet" type="text/css" href='./resources/css/style.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">    
+    
+</head>
+<body>
+        <div class="calculadora">
+                <input type="text" id="display" disabled >
+                <button class="c" onclick="clearDisplay()">C</button>
+                <button onclick="deleteLastInput()">&larr;</button>
+                <button onclick="appenToDisplay('/')">/</button>
+                <button onclick="appenToDisplay('*')">*</button>
+                <button onclick="appenToDisplay(7)">7</button>
+                <button onclick="appenToDisplay(8)">8</button>
+                <button onclick="appenToDisplay(9)">9</button>
+                <button onclick="appenToDisplay('-')">-</button>
+                <button onclick="appenToDisplay(4)">4</button>
+                <button onclick="appenToDisplay(5)">5</button>
+                <button onclick="appenToDisplay(6)">6</button>
+                <button onclick="appenToDisplay('+')">+</button>
+                <button onclick="appenToDisplay(1)">1</button>
+                <button onclick="appenToDisplay(2)">2</button>
+                <button onclick="appenToDisplay(3)">3</button>  
+                <button id="igual" onclick="calculateResult()">=</button>
+                <button id="cero" onclick="appenToDisplay(0)">0</button>
+                <button onclick="appenToDisplay('.')">.</button>  
+        </div>        
+            <section>
+                <button id="modoBoton">
+                    <i class="fas fa-sun"></i>
+                    <i class="fas fa-moon"></i>
+                </button>
+            </section>
+        
+</body>
+<script src="resources/js/script.js"></script>
+</html>
